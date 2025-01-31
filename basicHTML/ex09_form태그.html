@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼 실습</title>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>기본 정보</legend>
+      <p><label for="userid">아이디</label><input type="text" id="userid"></p>
+      <p><label for="passwd">비밀번호</label><input type="password" id="passwd"></p>
+    </fieldset>
+    <fieldset>
+      <legend>선택 정보</legend>
+      <p><label for="age">나이</label><input type="number" id="age"></p>
+      <p><label for="recommender">추천인</label><input type="text" id="recommender"></p>
+    </fieldset>
+    <!-- <input type="submit" value="전송"> -->
+    <!-- form 안에 버튼은 submit 이라는 이벤트를 자동으로 실행한다  -->
+    <!-- form 안에 있는 버튼은 위에 input type="submit" 동일하다 -->
+    <button>전송</button>
+  </form>
+  <!-- form 밖에 있는 버튼은 그냥 버튼 -->
+  <button>테스트</button>
+  <button onclick="alert('안녕하세요?')">눌러보세요!</button>
+
+
+
+</body>
+
+</html>

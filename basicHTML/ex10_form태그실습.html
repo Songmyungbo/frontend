@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form태그실습</title>
+</head>
+
+<body>
+  <form>
+    <h1>이메일 작성</h1>
+    <!-- label+input:text -->
+    <label for="name">이름 : </label><input type="text" name="name" id="name" value="송명보" readonly><br>
+    <label for="email">이메일 :</label>
+    <input type="email" name="email" id="email" required><br>
+    <lable for="content">내용</lable><br>
+    <!-- rows="한 영역에 보여줄 줄의 갯수" cols="한줄에 보여주는 줄의 갯수"-->
+    <textarea name="content" id="content" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+
+</html>
