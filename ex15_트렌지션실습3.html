@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트렌지션실습3</title>
+</head>
+<style>
+  .container {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid blue;
+  }
+
+  .container div {
+    transition-property: width;
+    transition-duration: 0.5s;
+    width: 10px;
+    height: 50px;
+    background-color: palevioletred;
+    margin-bottom: 10px;
+  }
+
+  .container:hover>div {
+    /* 부모에 있는 값에서 자식값을 100%으로 가져온다다 */
+    width: 100%;
+  }
+
+  .container div:nth-last-child(1) {
+    transition-delay: 0.5s;
+  }
+
+  .container div:nth-last-child(2) {
+    transition-delay: 0.7s;
+  }
+
+  .container div:nth-last-child(3) {
+    transition-delay: 0.8s;
+  }
+
+  .container div:nth-last-child(4) {
+    transition-delay: 0.9s;
+  }
+
+  .container div:nth-last-child(5) {
+    transition-delay: 1s;
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본선택자2</title>
+
+  <style>
+    h1,
+    h2,
+    h3 {
+      border: 1px solid black;
+
+    }
+
+    h1+h2 {
+      color: blue;
+    }
+
+    h1~h3 {
+      color: red;
+    }
+
+
+    .myDiv>h3 {
+      /*.myDiv h3 이렇게 하면 후손까지 다 적용 시켜줘 *  > 이거 쓰면 자식만 선택*/
+      background-color: pink;
+      width: 100px;
+      height: 100px;
+    }
+
+    h1~div {
+      color: green;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>test1</h1>
+  <h2>test2</h2>
+  <h3>test3</h3>
+  <h3>test4</h3>
+  <h2>test6</h2>
+  <div class="myDiv">
+    <h3>test5</h3>
+    <div>
+      <h3>test6</h3>
+    </div>
+  </div>
+
+</body>
+
+</html>
