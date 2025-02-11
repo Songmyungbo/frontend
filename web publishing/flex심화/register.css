@@ -1,0 +1,121 @@
+/* goole web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+
+body{
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+/* css  */
+.container{
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+/* 브라우저 화면 컨텐츠 width : 고정 px  */
+/* 모바일 화면 width 고정 -> 상대적 100% */
+.login-form{
+  /* border: 1px solid black; */
+  height: 50%;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  /* x축 y축 퍼지는 공간 그림자 색깔 */
+  box-shadow: 0 0 20px darkgrey;
+  box-sizing: content-box;
+}
+.login-form>h2{
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.sns-login{
+  display: flex;
+}
+
+.btn{
+  padding: 8px;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-right: 8px;
+  flex:1;
+}
+.btn:last-child{
+  margin-right:0px;
+}
+
+.btn.facebook{
+  background-color: #1877F2;
+}
+.btn.twitter{
+  background-color: #1DA1F2;
+}
+.btn.google{
+  background-color: #DF2029;
+}
+
+.field{
+  margin: 20px 0;
+  display: flex;
+}
+.field>label{
+  flex: 1;
+  margin-left: 5px;
+}
+.field input{
+  flex: 4;
+}
+/* 버튼 inline-block */
+.btn-submit{
+  /* width: 80px;
+  height: 30px; */
+  padding: 5px 40px;
+  background-color: royalblue;
+  color: #fff;
+  border-radius: 3px;
+  /* 한개 속성에 대해서 정렬할때 굳이 flex 박스 만들어서 안하고 float 할수있다 */
+  float: right;
+
+}
+/* 
+[1] 고정 width -> 100%
+[2] flex row -> column
+*/
+@media(max-width: 768px){
+  .login-form{
+    width: 100%;
+    height: auto;
+  }
+  .sns-login{
+    flex-direction: column;
+  }
+  .btn{
+    margin: 5px 0;
+  }
+  .field{
+    flex-direction: column;
+    margin: 10px 0;
+  }
+  .btn-submit{
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습4</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      width: 1200px;
+      display: flex;
+      background-color: aqua;
+
+    }
+
+    .content1 {
+      padding: 20px;
+      background-color: yellow;
+      flex: 1;
+    }
+
+    .content2 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content2 .sub1 {
+      background-color: lightblue;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .sub2 {
+      background-color: lightcoral;
+      padding: 20px;
+      flex: 1;
+    }
+
+    @media(max-width:768px) {
+      section {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <section>
+    <article class="content1">
+      <h2>content1</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, tempore. Error facere nam pariatur
+        exercitationem, corrupti aspernatur provident enim odio itaque repudiandae molestias quidem distinctio fuga eos
+        tempore. Recusandae, quam.
+        Temporibus maxime veritatis harum itaque dolorum maiores aperiam iusto voluptatibus ducimus, magnam quas
+        laudantium, aliquid natus. Iure incidunt, in, maiores tenetur explicabo rem alias cupiditate nulla facere magnam
+        vitae fuga.
+        Minus, iusto. Temporibus asperiores nisi laborum esse ratione doloribus. Tempora, explicabo. Ad eaque, error
+        deserunt vero impedit veritatis, ipsum saepe minima aliquam nam facilis mollitia sapiente! Blanditiis quos natus
+        nisi?</p>
+    </article>
+    <article class="content2">
+      <div class="sub1">
+        <h2>sub1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, consequuntur deserunt atque quibusdam
+          inventore facere fuga ex possimus suscipit praesentium eos ad, eius necessitatibus iure eum. Quos, eveniet
+          dignissimos. Quisquam.
+        </p>
+      </div>
+      <div class="sub2">
+        <h2>sub2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptas ut dignissimos deleniti adipisci
+          eveniet magnam, cum consequuntur. Architecto minima quidem voluptate quae non! Mollitia, et? Ipsam fuga ea
+          officia?</p>
+      </div>
+    </article>
+  </section>
+
+</body>
+
+</html>

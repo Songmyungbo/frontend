@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습3</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100%;
+      /*너비나 길이는 상속이 안됨!!! */
+      flex-direction: column;
+      display: flex;
+    }
+
+    header,
+    aside.left,
+    aside.right,
+    main,
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      background-color: tomato;
+      flex: 1;
+    }
+
+    section {
+      display: flex;
+      flex: 8;
+    }
+
+    aside.left {
+      background-color: yellow;
+      flex: 1;
+    }
+
+    main {
+      background-color: lightblue;
+      flex: 4;
+    }
+
+    aside.right {
+      background-color: yellowgreen;
+      flex: 1;
+    }
+
+    footer {
+      background-color: aqua;
+      flex: 1;
+    }
+
+    @media(max-width: 768px) {
+      section {
+        flex-direction: column;
+      }
+
+      main {
+        text-align: center;
+        order: -1;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <aside class="left">left</aside>
+      <main>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas qui, obcaecati esse incidunt distinctio,
+          in fugiat voluptate fuga tempore quibusdam sunt voluptatum odio nemo commodi quae beatae labore exercitationem
+          nam.</p>
+      </main>
+      <aside class="right">right</aside>
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+
+</html>

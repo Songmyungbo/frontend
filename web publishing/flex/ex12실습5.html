@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습5</title>
+
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    padding: 3%;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .container>div:nth-child(1) {
+    display: flex;
+    flex: 2;
+    background-color: yellow;
+  }
+
+  .container>div:nth-child(2) {
+    display: flex;
+    flex: 2;
+    background-color: green;
+  }
+
+
+  section {
+    display: flex;
+    flex: 8;
+  }
+
+  section>div {
+    flex: 1;
+    background-color: lightcoral;
+  }
+
+  main {
+    flex: 3;
+    background-color: lightblue;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div>
+      <header>
+        <h2>Header</h2>
+      </header>
+    </div>
+    <div>
+      <header>
+        <h2>banner</h2>
+      </header>
+    </div>
+    <section>
+      <div>
+        <h2>Navi</h2>
+      </div>
+      <main>
+        <h2>Main</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, error! Delectus quasi quas laborum saepe,
+          sed rerum aspernatur quo, nulla eaque similique, cum libero rem ipsam molestiae dolor quisquam atque!</p>
+      </main>
+  </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    body {
+      height: 100vh;
+      color: white;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      height: 100%;
+      gap: 10px;
+      grid-template:
+        "header header header header" 50px
+        "nav main main main" 1fr
+        "footer footer footer footer" 100px / 1fr 1fr 1fr 1fr;
+    }
+
+    header {
+      grid-area: header;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
