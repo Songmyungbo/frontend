@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>html-css-js ex08 연습</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .quiz {
+      font-size: 1.5em;
+      margin: 10px;
+      padding-right: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .quiz span {
+      padding-right: 10px;
+    }
+
+    .wrong {
+      color: red;
+      text-decoration: line-through;
+    }
+
+    .quiz input {
+      width: 80px;
+      height: 50px;
+      font-size: 0.9em;
+    }
+
+    .answer {
+      margin-top: 10px;
+    }
+
+    button {
+      border: none;
+      background-color: royalblue;
+      color: white;
+      width: 80px;
+      height: 50px;
+      border-radius: 10%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: green;
+    }
+
+    .answer span {
+      font-size: 20px;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>산술 문제를 풀어봅시다</h3>
+  <h4>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</h4>
+  <div class="list">
+    <!-- <div class="quiz">
+      <span>3 + 3 =</span> <input type="number">
+    </div>
+    <div class="quiz">
+      <span>3 + 3 =</span> <input type="number">
+    </div>
+    <div class="quiz">
+      <span>3 + 3 =</span> <input type="number">
+    </div>
+    <div class="quiz">
+      <span>3 + 3 =</span> <input type="number">
+    </div> -->
+  </div>
+  <div class="answer">
+    <button>채점</button>
+    <span id="score">0점</span>
+    <button>다시</button>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const answerArr = [0, 0, 0, 0];
+  makeQuiz();
+  // const answerArr = [6, 6, 6, 6];
+  const btn = document.querySelectorAll('button');
+
+  btn[0].addEventListener('click', () => {
+    const quizArr = document.querySelectorAll('.quiz span');
+    const inputArr = document.querySelectorAll('input');
+    let score = 0;
+    let idx = 0;
+    inputArr.forEach(input => {
+      if (input.value == answerArr[idx]) {
+        score += 1;
+        quizArr[idx].classList.remove('wrong');
+      } else {
+        quizArr[idx].classList.add('wrong');
+      }
+      idx += 1;
+    })
+    document.querySelector('.answer span').innerHTML = `${score}점`
+  })
+  function makeQuiz() {
+    for (let i = 0; i < answerArr.length; i++) {
+      let num1 = parseInt(Math.random() * 10) + 1;
+      let num2 = parseInt(Math.random() * 10) + 1;
+      let op = parseInt(Math.random() * 4) + 1;
+      let operator = "";
+
+      switch (op) {
+        case 1: operator = "+", answerArr[i] = num1 + num2; break;
+        case 2: operator = "-", answerArr[i] = num1 - num2; break;
+        case 3: operator = "*", answerArr[i] = num1 * num2; break;
+        case 4: operator = "/", answerArr[i] = parseInt(num1 / num2); break;
+      }
+      let div = document.createElement('div');
+      let span = document.createElement('span');
+      div.classList.add('quiz');
+
+      span.innerHTML = `${num1} ${operator} ${num2} =`;
+      let input = document.createElement('input');
+      input.type = 'number';
+
+      div.appendChild(span);
+      div.appendChild(input);
+
+      document.querySelector('.list').appendChild(div);
+    }
+  }
+  btn[1].addEventListener('click', () => {
+    document.querySelector('.list').innerHTML = "";
+    makeQuiz();
+  })
+
+</script>

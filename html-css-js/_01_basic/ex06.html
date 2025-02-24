@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex06</title>
+  <style>
+    body {
+      height: 100vh;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .one {
+      width: 400px;
+      height: 300px;
+      background-color: yellowgreen;
+    }
+
+    .two {
+      width: 80%;
+      height: 80%;
+      background-color: yellow;
+    }
+
+    .tree {
+      background-color: blue;
+      width: 70%;
+      height: 70%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="one">
+    <div class="two">
+      <div class="tree">
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const div = document.querySelectorAll("div");
+  div.forEach(d => d.addEventListener("click", (e) => {
+    e.stopPropagation(); // 이벤트 전파 방지 부모의 이벤트는 실행되지 않음.
+    console.log(e.currentTarget);
+  }));
+</script>

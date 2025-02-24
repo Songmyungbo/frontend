@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="input-save">
+  <input type="button" id="btn-save" value="추가하기">
+  <br>
+  <input type="text" id="input-delete">
+  <button id="btn-delete">삭제하기</button>
+  <hr>
+  <div class="save"></div>
+</body>
+
+</html>
+
+<script>
+  const inputSave = document.querySelector('#input-save');
+  const inputDelete = document.querySelector('#input-delete');
+  const btnSave = document.querySelector('#btn-save');
+  const btnDelete = document.querySelector('#btn-delete');
+  const save = document.querySelector('.save');
+
+  const dataList = localStorage.getItem('input_data') ? JSON.parse(localStorage.getItem('input_data')) : [];
+  btnSave.addEventListener('click', () => {
+    if (!inputSave.value || !inputSave.value.trim()) {
+      return;
+    }
+    dataList.push(inputSave.value);
+    console.log(dataList);
+    inputSave.value = '';
+    inputSave.focus();
+
+    localStorage.setItem('input_data', JSON.stringify(dataList));
+    viewPrint();
+  })
+  function viewPrint() {
+    save.innerHTML = dataList ? dataList : '';
+  }
+  btnDelete.addEventListener('click', () => {
+    if (dataList.length == 0) {
+      save.innerHTML = '삭제 할 값이 없습니다';
+      inputDelete.value = '';
+      inputDelete.focus();
+      return;
+    }
+    let value = inputDelete.value;
+    if (!value || !value.trim()) {
+      inputDelete.value = '';
+      inputDelete.focus();
+      return;
+    }
+    let delIdx = dataList.findIndex(data => data === value);
+
+    if (delIdx == -1) {
+      inputDelete.value = '';
+      inputDelete.focus();
+      return;
+    }
+    dataList.splice(delIdx, 1);
+
+    localStorage.setItem('input_data', JSON.stringify(dataList));
+    inputDelete.value = '';
+    inputDelete.focus();
+    viewPrint();
+  })
+
+  window.addEventListener('load', viewPrint); // 저장한 값 새로고침 해도 바로 뜨게끔.
+
+</script>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이름 선택기</title>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+    }
+
+    .container {
+      border: 1px solid green;
+      width: 100%;
+      background: white;
+      padding: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      height: 80px;
+      border-radius: 5px;
+      padding: 0px 20px;
+    }
+
+    .input-group input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid skyblue;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .input-group button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border: 1px solid skyblue;
+      border-radius: 0px 5px 5px 0px;
+      cursor: pointer;
+      background-color: white;
+    }
+
+
+    .btn-group {
+      margin-left: auto;
+    }
+
+    .btn-group button {
+      width: 60px;
+      font-size: 14px;
+      background: royalblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-group button:hover {
+      background: #0056b3;
+    }
+
+    #box {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    #user-list,
+    #selected-list {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0px;
+    }
+
+    li {
+      text-align: center;
+      line-height: 50px;
+      width: 200px;
+      height: 50px;
+      border-radius: 5px;
+      background: #ededed;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 10px;
+    }
+
+    .on {
+      background: rgb(187, 233, 251);
+      font-weight: bold;
+    }
+
+    .fix {
+      background: #dc3545;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="input-group">
+      <input type="text" id="username" placeholder="이름 입력">
+      <button id="btn-add">ADD</button>
+      <div class="btn-group">
+        <button id="btn-start">시작</button>
+        <button id="btn-stop">정지</button>
+      </div>
+    </div>
+
+    <div id="box">
+      <ul id="user-list"></ul>
+      <ul id="selected-list"></ul>
+    </div>
+  </div>
+</body>
+
+</html>

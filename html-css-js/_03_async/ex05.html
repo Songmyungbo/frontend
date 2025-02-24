@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex05</title>
+
+  <style>
+    .container {
+      display: flex;
+      height: 100vh;
+      border: 1px solid red;
+      background-color: pink;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid blue;
+      flex: 3;
+      padding: 10px;
+      align-items: center;
+      overflow-y: scroll;
+    }
+
+    .box {
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 20px;
+      background-color: palevioletred;
+      width: 170px;
+      height: 40px;
+      margin-left: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      background-color: gray;
+    }
+
+    button {
+      font-size: 1.5em;
+      font-weight: 600;
+      border: none;
+      background-color: royalblue;
+      width: 200px;
+      height: 100px;
+      color: white;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="box">서울</div>
+    </div>
+    <nav>
+      <button class="btn-add">추가하기</button>
+      <button class="btn-stop">중단하기</button>
+    </nav>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  let data = ["충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"];
+  const btnAdd = document.querySelector('.btn-add');
+  const btnStop = document.querySelector('.btn-stop');
+
+  let clickable = true;
+  let idx = 0;
+  const clickBtn = () => {
+    if (!clickable) return;
+    const addList = setInterval(() => {
+      addAddress(idx);
+      clickable = false;
+      idx++;
+    }, 500);
+
+  }
+  const addAddress = () => {
+    for (let i = 0; i < data.length; i++) {
+      if (idx == i) {
+        let div = document.createElement('div');
+        div.classList.add('box');
+        div.innerHTML = data[i];
+        document.querySelector('.grid').appendChild(div);
+      }
+    }
+  }
+  btnAdd.addEventListener('click', clickBtn);
+
+</script>

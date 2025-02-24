@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex07</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    button {
+      width: 50px;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: yellowgreen;
+      margin-top: 30px;
+      margin-left: -10px;
+      transition: 1s;
+
+    }
+
+    .scaled {
+      background-color: pink;
+      transform: translateX(-200px);
+      opacity: 20%;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <button>토글</button>
+</body>
+
+</html>
+
+<script>
+  const btn = document.querySelector('button');
+  const box = document.querySelector('div');
+
+
+  btn.addEventListener('click', () => {
+    box.classList.toggle('scaled');
+  })
+</script>
